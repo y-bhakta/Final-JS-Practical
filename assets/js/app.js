@@ -166,7 +166,7 @@ function adding() {
     userlist.innerHTML = '';
     arr.forEach((item, index) => {
         let col = document.createElement('div');
-        col.classList.add("col-6");
+        col.classList.add("col-12","col-md-6");
         col.innerHTML += `
             <div class="card">
                 <img src="https://cdn.dummyjson.com/recipe-images/1.webp" class="card-img-top" alt="..." style="height: 300px;">
