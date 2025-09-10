@@ -66,3 +66,7 @@ Recipe Book is a web application that allows users to browse, search, add, edit,
 ## License
 
 This project is for educational purposes.
+
+## Live View
+
+https://final-js-practical.vercel.app/
