@@ -132,9 +132,8 @@ document.getElementById('searchR').addEventListener('input',(e)=>{
 let arr = JSON.parse(localStorage.getItem('List2')) || [];
 let obj = {};
 let editidx = null;
-let eachdata = document.querySelectorAll('input');
+let eachdata = document.querySelectorAll('.eachdata');
 let submit = document.getElementById('submit');
-let text = document.querySelector('textarea');
 let userlist = document.querySelector('.userlist');
 eachdata.forEach((input) => {
     input.addEventListener('input', (e) => {
@@ -142,6 +141,7 @@ eachdata.forEach((input) => {
         obj = { ...obj, [name]: value };
     });
 });
+console.log(eachdata);
 submit.addEventListener('click', (e) => {
     e.preventDefault();
     if (editidx == null) {
@@ -169,7 +169,7 @@ function adding() {
         col.classList.add("col-12","col-md-6");
         col.innerHTML += `
             <div class="card">
-                <img src="https://cdn.dummyjson.com/recipe-images/1.webp" class="card-img-top" alt="..." style="height: 300px;">
+                <img src="${item.img}" class="card-img-top" alt="..." style="height: 300px;">
                 <div class="card-body">
                     <h4 class="card-title">BY: ${item.name}</h4>
                     <h5 class="card-title">${item.Rname}</h5>
@@ -211,6 +211,7 @@ function upchange(idx){
     arr[idx].img=document.getElementById('nimg').value;
     document.querySelector('.modal-footer').innerHTML='';
     adding();
+    localStorage.setItem('List2', JSON.stringify(arr));
 }
 const handleDelete = (index) => {
     arr.splice(index, 1);
